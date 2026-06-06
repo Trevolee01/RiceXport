@@ -1,0 +1,3 @@
+- [ ] Add `/hello` route to `my-app/src/App.tsx`
+- [ ] Create `my-app/src/pages/Hello.tsx` that renders “hello”
+- [ ] Manual verification: open `/hello` and confirm “hello” renders
