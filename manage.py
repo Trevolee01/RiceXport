@@ -6,12 +6,17 @@ This allows Render to find manage.py at the project root.
 import os
 import sys
 
-# Change to backend directory where the actual manage.py lives
-backend_dir = os.path.join(os.path.dirname(__file__), 'backend')
-os.chdir(backend_dir)
+if __name__ == '__main__':
+    # Change to backend directory where the actual manage.py lives
+    backend_dir = os.path.join(os.path.dirname(__file__), 'backend')
+    os.chdir(backend_dir)
 
-# Add backend to path
-sys.path.insert(0, backend_dir)
+    # Add backend to path
+    sys.path.insert(0, backend_dir)
 
-# Now execute the actual manage.py
-exec(open(os.path.join(backend_dir, 'manage.py')).read())
+    # Set Django settings module
+    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'ricexport.settings')
+
+    # Import and execute Django's management
+    from django.core.management import execute_from_command_line
+    execute_from_command_line(sys.argv)
