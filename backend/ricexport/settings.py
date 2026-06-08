@@ -17,7 +17,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-change-this-in-produc
 DEBUG = os.environ.get('DEBUG', 'True') == 'True'
 
 # Allow all hosts for deployment - restrict this in production if needed
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['ricexport.onrender.com', '127.0.0.1', 'localhost']
 
 # Application definition
 INSTALLED_APPS = [
