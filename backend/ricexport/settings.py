@@ -17,7 +17,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-change-this-in-produc
 DEBUG = os.environ.get('DEBUG', 'True') == 'True'
 
 # Allow all hosts for deployment - restrict this in production if needed
-ALLOWED_HOSTS = ['ricexport.onrender.com', '127.0.0.1', 'localhost']
+ALLOWED_HOSTS = ['ricexport.onrender.com', 'ricexport-1.onrender.com', 'ricexport-backend.onrender.com', '127.0.0.1', 'localhost']
 
 # Application definition
 INSTALLED_APPS = [
@@ -140,10 +140,11 @@ SIMPLE_JWT = {
 # CORS Settings
 CORS_ALLOWED_ORIGINS = os.environ.get(
     'CORS_ALLOWED_ORIGINS',
-    'http://localhost:5173,http://localhost:3000,http://127.0.0.1:5173,http://127.0.0.1:3000'
+    'http://localhost:5173,http://localhost:3000,http://127.0.0.1:5173,http://127.0.0.1:3000,https://ricexport.onrender.com,https://ricexport-1.onrender.com,https://ricexport-backend.onrender.com'
 ).split(',')
 
 CORS_ALLOW_CREDENTIALS = True
+CORS_ALLOW_ALL_ORIGINS = True
 
 # Security settings for production
 if not DEBUG:

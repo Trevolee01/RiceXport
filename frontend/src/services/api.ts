@@ -1,6 +1,5 @@
-import axios from 'axios';
-
-const API_URL = 'http://localhost:8000/api';
+import axios, { AxiosInstance, AxiosRequestConfig, AxiosResponse } from 'axios';
+const API_URL = 'https://ricexport.onrender.com/api/';
 
 const api = axios.create({
   baseURL: API_URL,
@@ -11,20 +10,20 @@ const api = axios.create({
 
 // Add token to requests
 api.interceptors.request.use(
-  (config) => {
+  (config: any) => {
     const token = localStorage.getItem('access_token');
     if (token) {
       config.headers.Authorization = `Bearer ${token}`;
     }
     return config;
   },
-  (error) => Promise.reject(error)
+  (error: unknown) => Promise.reject(error)
 );
 
 // Handle token refresh
 api.interceptors.response.use(
-  (response) => response,
-  async (error) => {
+  (response: any) => response,
+  async (error: any) => {
     const originalRequest = error.config;
 
     if (error.response?.status === 401 && !originalRequest._retry) {
