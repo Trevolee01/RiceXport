@@ -17,7 +17,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-change-this-in-produc
 DEBUG = os.environ.get('DEBUG', 'True') == 'True'
 
 # Allow all hosts for deployment - restrict this in production if needed
-ALLOWED_HOSTS = ['ricexport.onrender.com', 'ricexport-1.onrender.com', 'ricexport-backend.onrender.com', '127.0.0.1', 'localhost']
+ALLOWED_HOSTS = ['ricexport.onrender.com', 'ricexport-1.onrender.com', 'ricexport-1-qtam.onrender.com', 'ricexport-backend.onrender.com', '127.0.0.1', 'localhost']
 
 # Application definition
 INSTALLED_APPS = [
@@ -34,9 +34,9 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
-    'corsheaders.middleware.CorsMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
