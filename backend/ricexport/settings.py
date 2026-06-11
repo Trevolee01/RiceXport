@@ -140,7 +140,7 @@ SIMPLE_JWT = {
 # CORS Settings
 CORS_ALLOWED_ORIGINS = os.environ.get(
     'CORS_ALLOWED_ORIGINS',
-    'http://localhost:5173,http://localhost:3000,http://127.0.0.1:5173,http://127.0.0.1:3000,https://ricexport.onrender.com,https://ricexport-1.onrender.com,https://ricexport-backend.onrender.com'
+    'http://localhost:5173,http://localhost:3000,http://127.0.0.1:5173,http://127.0.0.1:3000,https://ricexport.onrender.com,https://ricexport-1.onrender.com,https://ricexport-1-qtam.onrender.com,https://ricexport-2.onrender.com,https://ricexport-backend.onrender.com'
 ).split(',')
 
 CORS_ALLOW_CREDENTIALS = True
